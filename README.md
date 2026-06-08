@@ -6,7 +6,7 @@ this is my study note
 ## Part 1  基础认知
 ### 
 
-```Memraid
+```mermaid
 flowchart TB
     classDef outer stroke:indigo,fill:#eef2ff
     classDef header stroke:indigo,fill:#e0e7ff
