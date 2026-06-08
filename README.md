@@ -6,7 +6,7 @@ this is my study note
 ## Part 1  基础认知
 ### 
 
-%%{init: {"flowchart": {"layout": "elk"}}}%%
+```Memraid
 flowchart TB
     classDef outer stroke:indigo,fill:#eef2ff
     classDef header stroke:indigo,fill:#e0e7ff
@@ -51,6 +51,6 @@ flowchart TB
         end
     end
 最核心的两句话是：电容怕“电压突变”，电感怕“电流突变”。
-
+```
 ## part 2 数学基础
 ### 
