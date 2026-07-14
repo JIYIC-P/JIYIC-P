@@ -56,7 +56,7 @@ flowchart TB
 ## part 2 数学基础
 ### 
 
-
+```mermaid
 flowchart TB
     subgraph 外部层[" "]
         A[上位机 / 第三方系统]
@@ -128,3 +128,4 @@ flowchart TB
     style M fill:#e8eaf6,stroke:#3949ab,stroke-width:1.5px
     style N fill:#e8eaf6,stroke:#3949ab,stroke-width:1.5px
     style O fill:#e8eaf6,stroke:#3949ab,stroke-width:1.5px
+    ```
