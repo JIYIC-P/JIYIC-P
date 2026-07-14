@@ -68,7 +68,7 @@ flowchart TB
     subgraph 通信层["通信层"]
         direction TB
         B1[串口接收<br/>帧头校验  长度校验  XOR校验<br/>指令解析  路由分发]
-        B2[串口发送<br/>状态采集  帧组装  校验计算<br/>周期发送: 姿态50ms  跟踪10ms  心跳1000ms]
+        B2[串口发送<br/>状态采集  帧组装  校验计算<br/>周期发送  姿态50ms  跟踪10ms  心跳1000ms]
         B3[心跳管理<br/>超时检测  连续3次超时告警<br/>链路断开保护]
         B4[错误处理<br/>帧错误计数  日志记录  异常丢弃]
     end
@@ -101,9 +101,9 @@ flowchart TB
     E -->|状态上报| B2
     F -->|状态上报| B2
 
-    G[场景管理模块<br/>沙漠/城镇/机场场景切换<br/>地面/空中视角切换<br/>预设航线加载(JSON)<br/>环境参数配置]
-    H[激光功能模块<br/>激光测距: 目标距离计算<br/>激光干扰: 目标暂停5s + 5s冷却<br/>干扰状态反馈]
-    I[配置管理模块<br/>SimConfig.json: 网络/显示/塔台/光学/激光/跟踪参数<br/>Routes.json: 航线数据<br/>启动加载  热重载]
+    G[场景管理模块<br/>沙漠/城镇/机场场景切换<br/>地面/空中视角切换<br/>预设航线加载JSON<br/>环境参数配置]
+    H[激光功能模块<br/>激光测距  目标距离计算<br/>激光干扰  目标暂停5s加5s冷却<br/>干扰状态反馈]
+    I[配置管理模块<br/>SimConfig.json  网络/显示/塔台/光学/激光/跟踪参数<br/>Routes.json  航线数据<br/>启动加载  热重载]
 
     C --> G
     D --> H
@@ -115,11 +115,11 @@ flowchart TB
     I -.->|配置注入| G
     I -.->|配置注入| H
 
-    subgraph 表现层["表现层（Unity渲染输出）"]
+    subgraph 表现层["表现层 Unity渲染输出"]
         direction TB
-        J[主显示窗口<br/>主画面渲染: TV/IR通道<br/>十字准星叠加  跟踪框叠加<br/>画面信息叠加: ZOOM/FOV/RANGE/AZ/EL<br/>画中画: 右下角1/8 副通道]
+        J[主显示窗口<br/>主画面渲染  TV/IR通道<br/>十字准星叠加  跟踪框叠加<br/>画面信息叠加  ZOOM/FOV/RANGE/AZ/EL<br/>画中画  右下角1/8 副通道]
         K[底部状态栏<br/>俯仰/航向/变倍  跟踪状态  激光状态<br/>串口状态  心跳延迟  场景/视角]
-        L[调试信息层（F1切换）<br/>FPS  串口帧统计(RX/ERR)  目标世界坐标<br/>摄像机FOV/Clip  航线航点索引]
+        L[调试信息层 F1切换<br/>FPS  串口帧统计RX/ERR  目标世界坐标<br/>摄像机FOV/Clip  航线航点索引]
     end
 
     H -->|测距结果  干扰状态| J
@@ -135,7 +135,7 @@ flowchart TB
         direction LR
         M[场景资源<br/>沙漠地形  城镇建筑  机场跑道<br/>行人模型  车辆模型  无人机模型<br/>材质/纹理/Shader]
         N[配置文件<br/>Config/SimConfig.json<br/>Config/Routes.json<br/>运行时自适应]
-        O[日志文件<br/>Logs/运行日志(按日期分文件)<br/>Logs/错误日志<br/>保留30天]
+        O[日志文件<br/>Logs/运行日志  按日期分文件<br/>Logs/错误日志<br/>保留30天]
     end
 
     G -->|场景加载| M
